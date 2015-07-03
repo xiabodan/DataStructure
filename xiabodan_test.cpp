@@ -769,6 +769,107 @@ void test_my_1(void)
 	printf("str6 add is 0x%x \n",str6); //
 }
 
+int test_my_2(int a)
+{
+	a = 100;
+	printf("test_my_2 int a : &a = 0x%x \n",&a);
+	return a;
+}
+int test_my_2(int* a)
+{
+	*a = 100;
+	printf("test_my_2 int* a : &a = 0x%x \n",&a);
+	return 100;
+}
+void test_my_2_1(int* a,int *b)
+{
+	int c = 100;
+	a = &c;
+	*b = c;
+	printf("*a = %d\n",*a);
+	printf("void test_my_2 int* a int *b: &a = 0x%x , &c = 0x%x \n",&a,&c);
+	printf("void test_my_2 int* a int *b: &b = 0x%x , &c = 0x%x \n",&b,&c);
+}
+
+int test_my_2_2(int* a)
+{
+	*a = 100;
+}
+
+int test_my_2_3(int* a)
+{
+	a = (int*)malloc(sizeof(int)*5);
+	int i = 0;
+	for(i=0;i<5;i++)
+		a[i] = i;
+	
+}
+
+int test_my_2_4(char** a)
+{
+	//*a = (char*)malloc(sizeof(char)*5);
+	char *s = "asdgw";
+	*a = s;
+}
+
+void test_my_2(void)
+{
+	int a = 10;
+	int r = test_my_2(a);
+	printf("main : &a = 0x%x \n",&a);
+	printf("a = %d,return a = %d\n",a,r); // a=10 ,r=100
+	
+	printf("\n");
+	r = test_my_2(&a);
+	printf("main : &a = 0x%x \n",&a);
+	printf("a = %d,return a = %d\n",a,r);//a =100,r =100
+	
+	printf("\n");
+	int b = 10,c = 10;
+	test_my_2_1(&b,&c);
+	printf("main : &b = 0x%x ,&c = 0x%x \n",&b,&c);
+	printf("b = %d,c = %d\n",b,c);//10 ,100
+
+	printf("\n");
+	int d = 10;
+	int *p=&d;
+	printf("*p = %d\n",*p);//10 
+	test_my_2_2(p);
+	printf("*p = %d\n",*p);//100
+
+	printf("\n");
+	int *p1 =NULL;
+	test_my_2_3(p1);
+	if(!p1)	
+		printf("p1 is NULL ,have not malloc space!\n");//要执行此句话，因为没有正确分配空间
+
+	printf("\n");
+	char *p2 = (char*)malloc(sizeof(char)*5);
+	test_my_2_4(&p2);	
+	if(p2)
+	{
+		printf("p1 malloc space success!\n");
+		int i = 0;
+		for(i=0;i<5;i++)
+		{
+			printf("p1[%d] = %c\n",i,p2[i]);
+		}
+	}
+	else
+		printf("p1 is NULL ,have not malloc space!\n");
+
+	
+	printf("测试二级指针内存分配原理\n");
+	char** p3 = (char**)malloc(sizeof(char*)*3);//必须为p3一级指针分配内存空间。
+	//char** p3 = NULL;
+	p3[0] = "qwert";
+	p3[1] = "asdfg";
+	p3[2] = "zxcvb";
+	cout << p3[0] << endl;
+	cout << p3[1] << endl;
+	cout << p3[2] << endl;
+}
+
 int main()
 {
 	//test_5_4_1();
@@ -790,7 +891,8 @@ int main()
 	//test_14_1_2();
 	//test_14_1_3();
 	//test_14_2_3();
-	test_my_1();
+	//test_my_1();
+	test_my_2();
 	
 	return 0;
 }
