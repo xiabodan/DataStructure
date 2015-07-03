@@ -758,7 +758,7 @@ void test_my_1(void)
 	printf("str3+1 add is 0x%x \n",str3+1);//string str3 seconed element address
 	printf("&str3 add is 0x%x \n",&str3);//whole string str3 front address
 	printf("&str3+1 add is 0x%x \n",&str3+1);//next arry front address,not seconed element address. here point string str4
-	printf("str4 add is 0x%x \n",str4); //here : str4 = &str3 + 1
+	printf("str4 add is 0x%x \n",str4);
 
 	printf(" \n");
 	printf("str5 add is 0x%x \n",str5);//string str5  first address
