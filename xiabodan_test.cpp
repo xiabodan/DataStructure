@@ -837,13 +837,13 @@ void test_my_2(void)
 	test_my_2_2(p);
 	printf("*p = %d\n",*p);//100
 
-	printf("\n");
+	printf("**Test secondary pointer function transform parameter1**\n");
 	int *p1 =NULL;
 	test_my_2_3(p1);
 	if(!p1)	
-		printf("p1 is NULL ,have not malloc space!\n");//ÒªÖ´ÐÐ´Ë¾ä»°£¬ÒòÎªÃ»ÓÐÕýÈ··ÖÅä¿Õ¼ä
+		printf("p1 is NULL ,have not malloc space!\n");//ÒªÖ´\D0Ð´Ë¾ä»°\A3\AC\D2\F2ÎªÃ»\D3\D0\D5\FDÈ·\B7\D6\C5\E4\BFÕ¼\E4
 
-	printf("\n");
+	printf("**Test secondary pointer function transform parameter2**\n");
 	char *p2 = (char*)malloc(sizeof(char)*5);
 	test_my_2_4(&p2);	
 	if(p2)
@@ -859,8 +859,8 @@ void test_my_2(void)
 		printf("p1 is NULL ,have not malloc space!\n");
 
 	
-	printf("²âÊÔ¶þ¼¶Ö¸ÕëÄÚ´æ·ÖÅäÔ­Àí\n");
-	char** p3 = (char**)malloc(sizeof(char*)*3);//±ØÐëÎªp3Ò»¼¶Ö¸Õë·ÖÅäÄÚ´æ¿Õ¼ä¡£
+	printf("*************Test The secondary pointer*****************\n");
+	char** p3 = (char**)malloc(sizeof(char*)*3);//\B1\D8\D0\EBÎªp3Ò»\BC\B6Ö¸\D5\EB\B7\D6\C5\E4\C4Ú´\E6\BFÕ¼ä¡£
 	//char** p3 = NULL;
 	p3[0] = "qwert";
 	p3[1] = "asdfg";
@@ -892,7 +892,9 @@ int main()
 	//test_14_1_3();
 	//test_14_2_3();
 	//test_my_1();
-	test_my_2();
-	
+	//test_my_2();
+	int i  = 5;	
+	printf("%d  %d  %d  %d  %d  %d  \n",i,i,++i,++i,i++,i++);
+
 	return 0;
 }
