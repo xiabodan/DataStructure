@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
-
+#include <boost/lexical_cast.hpp>
 //#include <conio.h>
 
 using namespace std;
@@ -895,6 +895,10 @@ int main()
 	//test_my_2();
 	int i  = 5;	
 	printf("%d  %d  %d  %d  %d  %d  \n",i,i,++i,++i,i++,i++);
-
+	using boost::lexical_cast;
+  	int a= lexical_cast<int>("123456");
+  	double b = lexical_cast<double>("123.456");
+  	std::cout << a << std::endl;
+  	std::cout << b << std::endl;
 	return 0;
 }
