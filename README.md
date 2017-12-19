@@ -1,4 +1,4 @@
-usage of the software 
+usage of the software master
 
 cd data
 make
