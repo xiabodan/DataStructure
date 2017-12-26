@@ -1,0 +1,59 @@
+{
+"appVersion":1.6.1,
+"type":"power",
+"memoryUsage":78,
+"timeSlot":1900,
+"timestamp":1500617925676,
+"packageName":"com.autonavi.minimap",
+"processCount":6,
+"wakelockCount":2,
+"wakelockTime":1900,
+"alarmWakeups":4,
+"networkUsage":1335,
+"bluetoothUsage":0,
+"cameraUsage":0,
+"cpuPowerUsage":0,
+"accelerometerSensor":32,
+"proximitySensor":32,
+"lightSensor":32,
+"gyroscopeSensor":32,
+"orientationSensor":32,
+"magnetometerSensor":32,
+"rotationVectorSensor":32,
+"linearAccelerometerSensor":32,
+"gravitySensor":32,
+"geomagneticRotationVectorSensor":32,
+"uncalibratedGyroscopeSensor":32,
+"uncalibratedMagnetometerSensor":32,
+"gpsSensor":32
+}
+
+
+appVersion： app的版本，类型int
+type: power
+memoryUsage: 内存（PSS）使用量, 单位kb, 类型int
+timeSlot：距离上次采集时间,单位ms, 类型long
+timestamp：当前采集数据的时间戳 类型long
+packageName：包名 类型String
+processCount：进程数 类型int
+wakelockCount：使用唤醒锁次数 类型int
+wakelockTime：唤醒锁总时间 单位ms 类型long
+alarmWakeups：alarm唤醒次数 类型int
+networkUsage：网络使用量，单位bytes， 类型 int
+bluetoothUsage：蓝牙使用电量， 单位mAh， 类型 double
+cameraUsage：相机使用电量， 单位mAh， 类型 double
+cpuPowerUsage：Cpu使用电量， 单位mAh， 类型 double
+
+Accelerometer Sensor：传感器使用时间，单位ms, 类型 long
+PROXIMITY Sensor：传感器使用时间，单位ms, 类型 long
+LIGHT Sensor：传感器使用时间，单位ms, 类型 long
+Gyroscope Sensor：传感器使用时间，单位ms, 类型 long
+Orientation Sensor：传感器使用时间，单位ms, 类型 long
+Magnetometer Sensor：传感器使用时间，单位ms, 类型 long
+Rotation Vector Sensor：传感器使用时间，单位ms, 类型 long
+Linear Accelerometer Sensor：传感器使用时间，类型 long
+Gravity Sensor：传感器使用时间，单位ms, 类型 long
+Geomagnetic Rotation Vector Sensor：传感器使用时间，单位ms, 类型 long
+Uncalibrated Gyroscope Sensor：传感器使用时间，单位ms, 类型 long
+Uncalibrated Magnetometer Sensor：传感器使用时间，单位ms, 类型 long
+Gps Sensor：传感器使用时间，单位ms, 类型 long
